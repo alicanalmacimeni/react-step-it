@@ -1,7 +1,15 @@
 import './StepWizard.css';
 import React, { useState } from 'react';
 
-function StepWizard({ children, navButtons, navDots }) {
+function StepWizard({
+  children,
+  navButtons,
+  navDots,
+  prevButtonName = "Prev",
+  nextButtonName = "Next",
+  dotClassName = "",
+  buttonsClassName = ""
+}) {
   const [activeStep, setActiveStep] = useState(1)
 
   const handleDumpDots = () => {
@@ -10,7 +18,7 @@ function StepWizard({ children, navButtons, navDots }) {
       liElements.push(
         <li
           key={i}
-          className={i + 1 === activeStep ? 'active' : ''}
+          className={dotClassName + (i + 1 === activeStep ? ' active' : '')}
           onClick={() => setActiveStep(i + 1)}>
           <span>{i + 1}</span>
         </li>
@@ -35,14 +43,14 @@ function StepWizard({ children, navButtons, navDots }) {
 
       {navButtons &&
         <div className="buttons-container">
-          <button
+          <button className={buttonsClassName}
             onClick={() => setActiveStep(activeStep - 1)}
             disabled={activeStep === 1}
-          >Prev</button>
-          <button
+          >{prevButtonName}</button>
+          <button className={buttonsClassName}
             onClick={() => setActiveStep(activeStep + 1)}
             disabled={activeStep === children.length}
-          >Next</button>
+          >{nextButtonName}</button>
         </div>
       }
     </div>

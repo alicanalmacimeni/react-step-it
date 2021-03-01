@@ -4,7 +4,14 @@ import Step from './components/Step';
 
 function App() {
   return (
-    <StepWizard navButtons={true} navDots={true}>
+    <StepWizard
+      navButtons={true}
+      navDots={true}
+      prevButtonName="Prev"
+      nextButtonName="Next"
+      dotClassName=""
+      buttonsClassName=""
+    >
       <Step>
         <p>Step 1 Content</p>
       </Step>

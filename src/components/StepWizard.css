@@ -1,0 +1,38 @@
+.step-wizard-container{
+    text-align: center;
+}
+
+.nav-dots{
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+.nav-dots li{
+    list-style-type: none;
+    margin: 0 1rem;
+    cursor: pointer;
+    width:40px;
+    height:40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #dedede;
+    border-radius: 50%;
+}
+
+.nav-dots li.active{
+    background: #555;
+    color: #fff;
+}
+
+.buttons-container button{
+    background-color: #dedede;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 0 5px;
+}
+
+.buttons-container button:focus{
+    outline: none;
+}
